@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<script>
+		var k, m,n;
+		function cal(x)
+		{
+			
+			document.getElementById("display1").innerHTML = document.getElementById("display1").innerHTML + x;
+		}
+		function add(z)
+		{   equal();
+			 k=document.getElementById('display1').innerHTML;
+			
+			document.getElementById('display3').innerHTML = document.getElementById('display1').innerHTML  ;
+			 document.getElementById('display2').innerHTML = z ;
+			document.getElementById('display1').innerHTML="";
+			n=1;
+		}
+		function subtract(z)
+		{    equal();
+			 k=document.getElementById('display1').innerHTML;
+			
+			document.getElementById('display3').innerHTML = document.getElementById('display1').innerHTML  ;
+			 document.getElementById('display2').innerHTML = z ;
+			document.getElementById('display1').innerHTML="";
+			n=2;
+		}
+		function multi(z)
+		{     equal();
+			 k=document.getElementById('display1').innerHTML;
+			
+			document.getElementById('display3').innerHTML = document.getElementById('display1').innerHTML  ;
+			 document.getElementById('display2').innerHTML = z ;
+			document.getElementById('display1').innerHTML="";
+			n=3;
+		}
+		function divide(z)
+		{  equal();
+			 k=document.getElementById('display1').innerHTML;
+			
+			document.getElementById('display3').innerHTML = document.getElementById('display1').innerHTML  ;
+			 document.getElementById('display2').innerHTML = z ;
+			document.getElementById('display1').innerHTML="";
+			n=4;
+		}
+		function modulo(z)
+		{   equal();
+			 k=document.getElementById('display1').innerHTML;
+			
+			document.getElementById('display3').innerHTML = document.getElementById('display1').innerHTML  ;
+			 document.getElementById('display2').innerHTML = z ;
+			document.getElementById('display1').innerHTML="";
+			n=5;
+		}
+		function equal()
+		{
+           m=document.getElementById('display1').innerHTML;
+           if(n==1)
+           {
+           document.getElementById('display1').innerHTML = parseFloat(k)+parseFloat(m);
+           k=0,m=0;
+           document.getElementById('display2').innerHTML="";
+           document.getElementById('display3').innerHTML="";
+           }
+           else if(n==2) {
+           	 document.getElementById('display1').innerHTML = parseFloat(k)-parseFloat(m);
+           	   k=0,m=0;
+           document.getElementById('display2').innerHTML="";
+           document.getElementById('display3').innerHTML="";
+           }
+            else if(n==3) {
+           	 document.getElementById('display1').innerHTML = parseFloat(k)*parseFloat(m);
+           	   k=0,m=0;
+           document.getElementById('display2').innerHTML="";
+           document.getElementById('display3').innerHTML="";
+           }
+            else if(n==4) {
+           	 document.getElementById('display1').innerHTML = parseFloat(k)/parseFloat(m);
+           	   k=0,m=0;
+           document.getElementById('display2').innerHTML="";
+           document.getElementById('display3').innerHTML="";
+           }
+            else if(n==5) {
+           	 document.getElementById('display1').innerHTML = parseFloat(k)%parseFloat(m);
+           	   k=0,m=0;
+           document.getElementById('display2').innerHTML="";
+           document.getElementById('display3').innerHTML="";
+           }
+		}
+		function ac(){
+			 document.getElementById('display1').innerHTML = "";
+			   k=0,m=0;
+           document.getElementById('display2').innerHTML="";
+           document.getElementById('display3').innerHTML="";
+		}
+		function del(){
+			var value=document.getElementById('display1').innerHTML;
+			document.getElementById('display1').innerHTML=value.substr(0,value.length-1);
+
+		}
+	</script>
+	<style>
+		#display2{
+			text-align: left;
+			font-size: 18px;
+			color: #FEFEFA;
+			
+		}
+		#display3{
+			text-align: left;
+			font-size: 18px;
+			color: #FEFEFA;
+				
+		}
+		#display1{
+			text-align: right;
+			font-size: 40px;
+			color:  #FEFEFA;
+			
+
+		}
+		#container{
+			border: 3px solid grey;
+			width:380px;
+		    height:93px;position:relative;
+		    border-radius:4px;
+		    margin-left:6px;background-color:#808080;
+		    margin-top: 6px;box-shadow: 0 4px 8px 0 rgba(0 ,0 ,0,0.6 )  ,0 6px 20px 0 rgba(0,102,34,0.8);
+		}
+		#btn{
+			text-align: center;
+			font-size:45px;
+			border-radius:200px;
+			border:2px solid rgba(0,0,0,.8);
+			width:88px;
+			height:70px;
+			margin :10px 0 10px 6px;box-shadow: 0 4px 8px 0 rgba(0 ,0 ,0,0.6 )  ,0 6px 20px 0 rgba(0,102,34,0.8);
+
+		}
+		#btn:hover{
+			color:black;
+			background-color: #FEFEFA;;
+		}
+		#btnsp:hover{
+			color:black;
+			background-color: #FEFEFA;;
+		}
+		#btnsp{
+			text-align: center;
+			font-size:35px;
+			position:relative;
+			border-radius:30px;
+			border:2px solid rgba(0,0,0,.8);
+			width:90px;
+			height:70px;
+			
+			margin-left: 28px;box-shadow: 0 4px 8px 0 rgba(0 ,0 ,0,0.6 )  ,0 6px 20px 0 rgba(0,102,34,0.8);
+
+		}
+		#main{
+			margin:auto;
+			position :relative;
+		    align-content: space-between; 
+		    width:400px;
+		    border:4px solid grey;border-radius:8px;
+		    background-color: 	#D3D3D3;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		    <div id="container">
+		    <div id="display3"></div>
+			<div id="display2"></div>
+			<div id="display1"></div>
+		    </div>
+			<br>
+			<button  id="btnsp" onclick="ac()">ac</button>
+			<button id="btnsp" onclick="equal()">=</button>
+			<button id="btnsp" onclick="del()">DEL</button>
+			<br>
+			<button id="btn" onclick="cal(9)">9</button>
+			<button id="btn" onclick="cal(8)">8</button>
+			<button id="btn" onclick="cal(7)">7</button>
+			<button id="btn" onclick="add('+')">+</button>
+			<br>
+			<button id="btn" onclick="cal(6)">6</button>
+			<button id="btn" onclick="cal(5)">5</button>
+			<button id="btn" onclick="cal(4)">4</button>
+			<button id="btn" onclick="subtract('-')">-</button>
+			<br>
+			<button id="btn" onclick="cal(3)">3</button>
+			<button id="btn" onclick="cal(2)">2</button>
+			<button id="btn" onclick="cal(1)">1</button>
+			<button id="btn" onclick="multi('*')">*</button>
+			<br>
+			<button id="btn" onclick="cal('.')">.</button>
+			<button id="btn" onclick="cal(0)">0</button>
+			<button id="btn" onclick="modulo('%')">%</button>
+			<button id="btn" onclick="divide('/')">/</button>
+			
+   </div>
+			
+			
+		    
+			
+			
+</body>
+</html>
+
+
